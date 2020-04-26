@@ -1,4 +1,4 @@
-# [EU] Bizitokitik Covid2019
+# [EU] Bizitokitik Covid19
 Itxialdi egunetarako garatutako aplikazioa. Bizitokitik kilometro bateko eremua bistaratu eta zure uneko posizioa bertan azaltzen da.
 
 ### Uneko posizioa oker hartzen badu
