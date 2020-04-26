@@ -182,6 +182,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             home = new LatLng(location.getLatitude(), location.getLongitude());
                             saveHome(home);
 
+
                         } else {
 
                             Toast toast = Toast.makeText(MapsActivity.this, R.string.maps_activity_toast_alert_no_location, Toast.LENGTH_LONG);
