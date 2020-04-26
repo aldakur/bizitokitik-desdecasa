@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InfoActivity">
+
+    <TextView
+        android:id="@+id/activity_info_text"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/activity_info_text"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        tools:context=".InfoActivity"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <TextView
+        android:id="@+id/activity_info_github"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://github.com/aldakur/desdecasacovid19"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:autoLink="web"
+        tools:context=".InfoActivity" />
+
+    <TextView
+        android:id="@+id/activity_info_developed_by"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_info_developed_by"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:autoLink="web"
+        tools:context=".InfoActivity" />
+
+    <TextView
+        android:id="@+id/activity_info_web_egoitz"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://www.egoitzgonzalez.com"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:autoLink="web"
+        tools:context=".InfoActivity" />
+
+    <TextView
+        android:id="@+id/activity_info_web_aldakur"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://www.aldakur.net"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:autoLink="web"
+        tools:context=".InfoActivity" />
+
+    <TextView
+        android:id="@+id/activity_info_twitter"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://www.twitter.com/aldakur"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:autoLink="web"
+        tools:context=".InfoActivity" />
+
+</LinearLayout>

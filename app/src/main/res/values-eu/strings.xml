@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bizitokitik Covid19</string>
+    <string name="title_activity_maps">Bizitokitik Covid19</string>
+    <string name="maps_activity_home_alert_title">Etxean zaude?</string>
+    <string name="maps_activity_home_alert_text">
+        Aplikazioa exekutatzen duzun lehen aldian etxean egon behar duzu.
+        Honela, zure uneko kokapena aplikazioan gorde eta oinez ibiltzeko eremua azalduko zaizu. Aplikazioak ez du zure kokapena hodeian gordetzen.
+        Zure pribatutasuna errespetatzen dugu.
+        Ez bazaude etxean, irten botoia sakatu eta exekutatu aplikazioa etxean zaudenean. Eskerrik asko.
+    </string>
+    <string name="maps_activity_home_alert_button_cancel">Irten</string>
+    <string name="maps_activity_home_alert_button_accept">Ados</string>
+    <string name="maps_activity_toast_alert_no_location">Ez dut zure kokapena lortzen.</string>
+    <string name="maps_activity_toast_app_need_permissions">Baimenik gabe ezin zaitut kokatu.</string>
+    <string name="info">Info</string>
+    <string name="title_activity_info">Informazioa</string>
+    <string name="activity_info_text">Aplikazio hau GPLv3 lizentziapean dago. Kodea Github-en aurkituko duzu.</string>
+    <string name="activity_info_developed_by">Garatzailea: Egoitz González (@aldakur)</string>
+</resources>
