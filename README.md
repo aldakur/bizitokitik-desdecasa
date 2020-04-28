@@ -10,7 +10,8 @@ Itxialdi egunetarako garatutako aplikazioa. Bizitokitik kilometro bateko eremua 
 1. Goian azaltzen den bilatzailean aplikazioaren izena jarri eta aplikazioa aukeratu.
 1. Memoria botoia sakatu.
 1. Garbitu Biltegia botoia sakatu.
-1. Aplikazioa ireki.
+1. Google Maps aplikazioa ireki eta zure uneko posizioa agertu arte itxaron (puntu urdina).
+1. Bizitikitik Covid19 aplikazioa ireki.
 
 # [ES] Desde Casa Covid19
 Aplicación desarrollada para los días de confinamiento en los que solo se puede salir a la calle un máximo de 1 km desde nuestro domicilio. 
@@ -23,7 +24,8 @@ Tomando como referencia el domicilio muestra un círculo de 1 km de radio y tu p
 1. En el buscador que aparece arriba de la pantalla, escribir el nombre de la aplicación. “Desde Casa Covid19”.
 1. Almacenamiento.
 1. Borar almacenamiento.
-1. Abrir aplicación.
+1. Abrir la aplicación Google Maps y esperar a que aparezca tu localización actual (un punto azul).
+1. Abrir la aplicación Desde Casa Covid19.
 
 
 # Screenshots
