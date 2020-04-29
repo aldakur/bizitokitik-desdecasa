@@ -1,5 +1,7 @@
 # Download
-[https://labur.eus/bizitokitikcovid19](https://labur.eus/bizitokitikcovid19)
+[EU]    [https://labur.eus/bizitokitikcovid19](https://labur.eus/bizitokitikcovid19)
+
+[ES] [https://labur.eus/desdecasacovid19](https://labur.eus/desdecasacovid19)
 
 # [EU] Bizitokitik Covid19
 Itxialdi egunetarako garatutako aplikazioa. Bizitokitik kilometro bateko eremua bistaratu eta zure uneko posizioa bertan azaltzen da.
