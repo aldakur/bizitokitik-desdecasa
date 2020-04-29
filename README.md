@@ -4,7 +4,7 @@
 # [EU] Bizitokitik Covid19
 Itxialdi egunetarako garatutako aplikazioa. Bizitokitik kilometro bateko eremua bistaratu eta zure uneko posizioa bertan azaltzen da.
 
-### Uneko posizioa oker hartzen badu
+### Uneko posizioa oker hartzen badu (soilik 1.0 bertsioan)
 
 1. Menura joan eta Ezarpenak aukeratu.
 1. Goian azaltzen den bilatzailean aplikazioaren izena jarri eta aplikazioa aukeratu.
@@ -18,7 +18,7 @@ Aplicación desarrollada para los días de confinamiento en los que solo se pued
 
 Tomando como referencia el domicilio muestra un círculo de 1 km de radio y tu posición en el mapa.
 
-### En caso de que la localización inicial no sea correcta 
+### En caso de que la localización inicial no sea correcta (unicamente en la versión 1.0)
 
 1. Menu -> Ajustes.
 1. En el buscador que aparece arriba de la pantalla, escribir el nombre de la aplicación. “Desde Casa Covid19”.

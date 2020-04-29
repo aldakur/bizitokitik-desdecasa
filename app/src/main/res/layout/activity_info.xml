@@ -34,6 +34,22 @@
         tools:context=".InfoActivity" />
 
     <TextView
+        android:id="@+id/activity_info_app_version"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/app_version"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        tools:context=".InfoActivity" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
         android:id="@+id/activity_info_developed_by"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
@@ -80,5 +96,6 @@
         android:padding="8dp"
         android:autoLink="web"
         tools:context=".InfoActivity" />
+
 
 </LinearLayout>

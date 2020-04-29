@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Desde Casa Covid19</string>
+    <string name="app_version">Versión 1.1</string>
     <string name="title_activity_maps">Desde Casa Covid19</string>
     <string name="maps_activity_home_alert_title">¿Estás en casa?</string>
     <string name="maps_activity_home_alert_text">La primera vez que inicias debes de estar en casa. De este modo la aplicación guardará tu ubicación actual en tu dispositivo y te mostrara la zona para caminar. La aplicación no guardará tu ubicación en la nube. Respetamos tu privacidad. Si no estas en casa, pulsa salir e inicia la aplicación al llegar a casa. Gracias.</string>
     <string name="maps_activity_home_alert_button_cancel">Salir</string>
     <string name="maps_activity_home_alert_button_accept">Aceptar</string>
-    <string name="maps_activity_toast_alert_no_location">No consigo localizar tu ubicación actual.</string>
+    <string name="maps_activity_home_alert_button_no">No</string>
+    <string name="maps_activity_settings_gps_alert">Debes de tener la ubicación de GPS activada en los ajustes de seguridad y ubicación.</string>
+    <string name="maps_activity_toast_alert_no_location">No consigo localizar tu ubicación actual. Si tienes habilitados los ajustes y permisos espera un poco.</string>
     <string name="maps_activity_toast_app_need_permissions">Sin permisos la aplicación no puede localizarte.</string>
     <string name="info">Info</string>
     <string name="title_activity_info">Información</string>

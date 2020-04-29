@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Bizitokitik Covid19</string>
+    <string name="app_version">1.1 Bertsioa</string>
     <string name="title_activity_maps">Bizitokitik Covid19</string>
     <string name="maps_activity_home_alert_title">Etxean zaude?</string>
     <string name="maps_activity_home_alert_text">
@@ -10,8 +11,10 @@
     </string>
     <string name="maps_activity_home_alert_button_cancel">Irten</string>
     <string name="maps_activity_home_alert_button_accept">Ados</string>
-    <string name="maps_activity_toast_alert_no_location">Ez dut zure kokapena lortzen.</string>
+    <string name="maps_activity_home_alert_button_no">Ez</string>
+    <string name="maps_activity_toast_alert_no_location">Ez dut zure kokapena lortzen. Ezarpen eta baimenak onartuta baldin badituzu itxoin pixka bat.</string>
     <string name="maps_activity_toast_app_need_permissions">Baimenik gabe ezin zaitut kokatu.</string>
+    <string name="maps_activity_settings_gps_alert">Ezarpenen segurtasuna eta kokapena atalean GPS-a aktibatu behar duzu.</string>
     <string name="info">Info</string>
     <string name="title_activity_info">Informazioa</string>
     <string name="activity_info_text">Aplikazio hau GPLv3 lizentziapean dago. Kodea Github-en aurkituko duzu.</string>
