@@ -17,7 +17,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,12 +32,18 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+
+
+
+
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
 
     //ActivityCompat.OnRequestPermissionsResultCallback
     /**
@@ -62,12 +67,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private LocationRequest mLocationRequest;
 
+    private boolean printed = false;
 
 
     @Override
     protected void onResume() {
         super.onResume();
         // Log.i("posicion", "on Resume");
+        // Log.i("posicion", "on Create. IS HOME SAVE: "+isHomeSaved());
         startLocationUpdates();
 
     }
@@ -77,7 +84,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onRestart() {
         super.onRestart();
         // Log.i("posicion", "on restart");
-        launch(getCircleHasBeenDrawn());
+        // Log.i("posicion", "on Create. IS HOME SAVE: "+isHomeSaved());
+        launch(getHomeSaved());
 
 
     }
@@ -85,6 +93,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onStart() {
         super.onStart();
+        // Log.i("posicion", "on restart");
+        // Log.i("posicion", "on Create. IS HOME SAVE: "+isHomeSaved());
         statusCheck();
     }
 
@@ -94,15 +104,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         // Log.i("posicion", "on Create");
 
+        // Log.i("posicion", "on Create. IS HOME SAVE: "+isHomeSaved());
+        // Log.i("posicion", "on Create. HOEM "+home);
         // alert. Are you at home?
-        if (!isHasBeenCircleDrawn()) {
-            // Log.i("posicion", "onCreate. hasBeenAccepedHOmeAlertDentro del IF");
+        if (!isHomeSaved()) {
+            // Log.i("posicion", "onCreate. isHomeSaved. Inside IF");
             homeAlert();
         }
-        // May be it is not need. If user cancel alert app is going to close, so never go to else.
+        // May be it is not need. Because if user cancel alert app is going to close, so never go to else.
         else {
-            // Log.i("posicion", "onCreate. Dentro del ELSE");
-            //statusCheck();
+            // Log.i("posicion", "onCreate. isHomeSaved. Inside ELSE");
+            // statusCheck();
             checkPermissions();
         }
 
@@ -122,7 +134,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         private void startLocationUpdates() {
             // Log.i("posicion", "startLocationUpdates");
-            // Create the location request to start receiving updates
+
+            // Create the location request to start receiving updates.
             mLocationRequest = new LocationRequest();
             mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
@@ -150,15 +163,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void onLocationChanged(Location lastLocation) {
         // Log.i("posicion", "onLocationChanged");
+
         // New location has now been determined
+        // Log.i("posicion", "onLocationChanged. - Show Location -");
+        // Log.i("posicion", "onLocationChanged. localizacion: "+ lastLocation);
 
-        //String location
-        // Log.i("posicion", "- Muestro localización -");
-        // Log.i("posicion", "localizacion: "+ lastLocation);
-
-        // home = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
-        // saveHome(home);
-        if(getCircleHasBeenDrawn()==0){
+        if(getHomeSaved()==0){
+            // Log.i("posicion", "onLocationChanged. home is saved");
             launch(0);
         }
 
@@ -168,7 +179,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void statusCheck() {
         final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
+        // Log.i("posicion", "statusCheck");
+        // GPS provider enable in user's settings
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             buildAlertMessageNoGps();
 
@@ -197,8 +209,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private void homeAlert() {
-
-        AlertDialog alertDialog = new AlertDialog.Builder(this)
+        // Log.i("posicion", "HOME ALERT");
+        // AlertDialog alertDialog =
+        new AlertDialog.Builder(this)
                 // set icon
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 // set title
@@ -210,6 +223,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         // positive button is clicked
+
                         // Check permisions
                         checkPermissions();
                     }
@@ -223,15 +237,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         finishAndRemoveTask();
                     }
                 })
+
                 .show();
-
-
 
     }
 
 
     private void checkPermissions() {
         // Log.i("posicion", "checkPermissions");
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
 
@@ -249,7 +263,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void startMap() {
         // Log.i("posicion", "startMap");
-        //statusCheck();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -269,6 +283,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+        // Log.i("posicion", "onMapReady");
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
 
@@ -281,8 +297,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         // Log.i("posicion", "onMapReady");
+
         //  first time get location and draw a circle
-        int value = getCircleHasBeenDrawn();
+        // Second time print circle (if it is necessary)
+        int value = getHomeSaved();
         launch(value);
 
 
@@ -292,49 +310,87 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         switch (value) {
             case 0:
                 // Log.i("posicion", "case 0");
+
                 // get home location
                 client = LocationServices.getFusedLocationProviderClient(this);
-                // NIK UTE EZ DEL BEHAR locationRequest = LocationRequest.create();
-                // NIK UTE EZ DEL BEHAR locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
                 client.getLastLocation().addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
                     @Override
-                    public void onSuccess(Location location) {
-                        if (location != null) {
+                    public void onSuccess(final Location location) {
+                         // Log.i("posicion", "Case 0. onSuccess");
+                        if (location != null && !printed) {
+                            // Log.i("posicion", "Case 0. onSuccess. Location true");
+                                home = new LatLng(location.getLatitude(), location.getLongitude());
+                                saveHome(home);
+                                setTrueHomeSaved();
 
-                            home = new LatLng(location.getLatitude(), location.getLongitude());
-                            saveHome(home);
 
                             // Draw circle around home
-                            // Log.i("posicion", "PINTO CIRCULO");
+                            // Log.i("posicion", "PRINT CIRCLE");
                             Resources res = getResources();
                             int grayTransparent = res.getColor(R.color.colorGrayTransparent);
-                            Circle circle = mMap.addCircle(new CircleOptions()
+                            //Circle circle =
+                            mMap.addCircle(new CircleOptions()
                                     .center(home)
                                     .radius(1000)
                                     .strokeColor(Color.RED)
                                     .fillColor(grayTransparent));
-                            // Log.i("posicion", "- Muestro localización -");
-                            // Log.i("posicion", "Latitud: "+ location);
+                            //Log.i("posicion", "Case 0. - Show location -");
+                            //Log.i("posicion", "case 0 Home: "+home);
 
 
-                            // No vuelo a preguntar más lo de estar en casa.
-                            setTrueCircleHasBeenDrawn();
+
+                            // Don't ask more. Are you at home?
+                            printed = true;
 
 
                             // move camera
                             float zoom = 14.0f;
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(home, zoom));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(home, zoom), new GoogleMap.CancelableCallback() {
+                                @Override
+                                public void onFinish() {
+                                    // snackbar. if home location is wrong, recalculate it
+                                    // Log.i("posicion", "ON FINISH -----------------");
+                                    Snackbar mySnackbar = Snackbar.make(findViewById(android.R.id.content),
+                                            R.string.maps_activity_home_snackbar_text, Snackbar.LENGTH_LONG);
+                                    mySnackbar.setAction(R.string.maps_activity_home_snackbar_button, MapsActivity.this)
+                                            .setDuration(5500);
+                                    mySnackbar.show();
+
+                                    mySnackbar.addCallback(new Snackbar.Callback() {
+
+                                        @Override
+                                        public void onDismissed(Snackbar mySnackbar, int event) {
+                                            //see Snackbar.Callback docs for event details
+                                            // Log.i("posicion", "SnackBar. onDismissed");
+                                        }
+
+                                        @Override
+                                        public void onShown(Snackbar mySnackbar) {
+                                            // Log.i("posicion", "SnackBar. onShow");
+                                        }
+                                    });
+
+
+
+                                }
+
+                                @Override
+                                public void onCancel() {
+                                    //Log.i("posicion", "snackBar. onCancel");
+
+                                }
+                            });
+
 
 
                         } else {
-                            //String location
-
-                            // Log.i("posicion", "Case 0. ELSE. Location is null");
+                            // Log.i("posicion", "Case 0. onSuccess. Location is null");
                             Toast.makeText(MapsActivity.this, R.string.maps_activity_toast_alert_no_location, Toast.LENGTH_SHORT).show();
 
                         }
 
                     }
+
                 });
 
                 break;
@@ -342,23 +398,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             case 1:
                 // app has been launched before
-                // We know home
+                // we know home
                 // we need to print circle
                 // Log.i("posicion", "case 1. App has been launched before");
-                // draw circle around home
 
+                // draw circle around home
                 home = getHome();
                 Resources res = getResources();
-
-                int grayTransparent = res.getColor(R.color.colorGrayTransparent);
-                Circle circle = mMap.addCircle(new CircleOptions()
-                        .center(getHome())
-                        .radius(1000)
-                        .strokeColor(Color.RED)
-                        .fillColor(grayTransparent));
-                //float zoom = 14.0f;
+                if (!printed) {
+                    // Log.i("posicion", "case 1. Inside IF");
+                    int grayTransparent = res.getColor(R.color.colorGrayTransparent);
+                    // Circle circle
+                    mMap.addCircle(new CircleOptions()
+                            .center(getHome())
+                            .radius(1000)
+                            .strokeColor(Color.RED)
+                            .fillColor(grayTransparent));
+                    printed = true;
+                }
+                // Log.i("posicion", "case 1. Outside IF");
                 float zoom = 14.0f;
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(home, zoom));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(home, zoom));
+
 
                 break;
 
@@ -388,12 +449,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // CIRCLE METHOD AND FUNCTIONS
 
-    // o it has not been drawn
-    // 1 it has been drawn
-    private int getCircleHasBeenDrawn() {
-        // Log.i("posicion", "getCircleHasBeenDrawn");
+    // int o it has not been printed
+    // int 1 it has been printed
+    private int getHomeSaved() {
+        // Log.i("posicion", "getHomeSaved");
+
         SharedPreferences sp = getSharedPreferences("MYAPP", 0);
         int result = sp.getInt("ISACCEPTEHOMEALERT", 0);
+
 
   /*
         int result, currentVersionCode = BuildConfig.VERSION_CODE;
@@ -408,19 +471,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    // det 1
-    private void setTrueCircleHasBeenDrawn() {
+    // set 1
+    private void setTrueHomeSaved() {
+        // Log.i("posicion", "setTrueHomeSaved");
+
         SharedPreferences sp = getSharedPreferences("MYAPP", 0);
         sp.edit().putInt("ISACCEPTEHOMEALERT", 1).apply();
     }
 
 
-    // false it has not been drawn
-    // true it has been drawn
-    private boolean isHasBeenCircleDrawn() {
-        // Log.i("posicion", "hasBeenAcceptedHomeAlert");
+    // return false it has not been printed
+    // return true it has been printed
+    private boolean isHomeSaved() {
+        // Log.i("posicion", "isHomeSaved");
+
         SharedPreferences sp = getSharedPreferences("MYAPP", 0);
-        int result, currentVersionCode = BuildConfig.VERSION_CODE;
+        // int result, currentVersionCode = BuildConfig.VERSION_CODE;
         int accepted = sp.getInt("ISACCEPTEHOMEALERT", 0);
         if (accepted == 0) {
             return false;
@@ -431,8 +497,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private void saveHome(LatLng home) {
+        // Log.i("posicion", "saveHome");
 
         // Save home location only the first time that the app launch
+        // if user accepted home alert
         SharedPreferences myPreferences = getSharedPreferences("MYAPP", 0);
         SharedPreferences.Editor myEditor = myPreferences.edit();
 
@@ -454,6 +522,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         }
+    }
+
+    // Snackbar
+    @Override
+    public void onClick(View view) {
+        // Log.i("posicion", "SnackBar. onClick");
+        mMap.clear();
+        printed = false;
+        statusCheck();
+        launch(0);
     }
 
 }
