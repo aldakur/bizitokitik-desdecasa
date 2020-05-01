@@ -3,6 +3,9 @@
 
 [ES] [https://labur.eus/desdecasacovid19](https://labur.eus/desdecasacovid19)
 
+# How to install
+[https://youtu.be/9s-eOTz7bj8](https://youtu.be/9s-eOTz7bj8)
+
 # [EU] Bizitokitik Covid19
 Itxialdi egunetarako garatutako aplikazioa. Bizitokitik kilometro bateko eremua bistaratu eta zure uneko posizioa bertan azaltzen da.
 
