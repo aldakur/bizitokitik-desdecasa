@@ -1,4 +1,4 @@
-package net.aldakur.desdecasacovid19;
+package net.aldakur.bizitokitik;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("net.aldakur.desdecasacovid19", appContext.getPackageName());
+        assertEquals("net.aldakur.bizitokitik", appContext.getPackageName());
     }
 }

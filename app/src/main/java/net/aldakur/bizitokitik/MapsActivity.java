@@ -1,4 +1,4 @@
-package net.aldakur.desdecasacovid19;
+package net.aldakur.bizitokitik;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -132,33 +132,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-        private void startLocationUpdates() {
-            // Log.i("posicion", "startLocationUpdates");
+    private void startLocationUpdates() {
+        // Log.i("posicion", "startLocationUpdates");
 
-            // Create the location request to start receiving updates.
-            mLocationRequest = new LocationRequest();
-            mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        // Create the location request to start receiving updates.
+        mLocationRequest = new LocationRequest();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-            // Create LocationSettingsRequest object using location request
-            LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
-            builder.addLocationRequest(mLocationRequest);
-            LocationSettingsRequest locationSettingsRequest = builder.build();
+        // Create LocationSettingsRequest object using location request
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
+        builder.addLocationRequest(mLocationRequest);
+        LocationSettingsRequest locationSettingsRequest = builder.build();
 
-            // Check whether location settings are satisfied
-            // https://developers.google.com/android/reference/com/google/android/gms/location/SettingsClient
-            SettingsClient settingsClient = LocationServices.getSettingsClient(this);
-            settingsClient.checkLocationSettings(locationSettingsRequest);
+        // Check whether location settings are satisfied
+        // https://developers.google.com/android/reference/com/google/android/gms/location/SettingsClient
+        SettingsClient settingsClient = LocationServices.getSettingsClient(this);
+        settingsClient.checkLocationSettings(locationSettingsRequest);
 
-            // new Google API SDK v11 uses getFusedLocationProviderClient(this)
-            LocationServices.getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, new LocationCallback() {
-                        @Override
-                        public void onLocationResult(LocationResult locationResult) {
-                            // do work here
-                            onLocationChanged(locationResult.getLastLocation());
-                        }
-                    },
-                    Looper.myLooper());
-        }
+        // new Google API SDK v11 uses getFusedLocationProviderClient(this)
+        LocationServices.getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, new LocationCallback() {
+                    @Override
+                    public void onLocationResult(LocationResult locationResult) {
+                        // do work here
+                        onLocationChanged(locationResult.getLastLocation());
+                    }
+                },
+                Looper.myLooper());
+    }
 
 
     private void onLocationChanged(Location lastLocation) {
@@ -316,12 +316,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 client.getLastLocation().addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(final Location location) {
-                         // Log.i("posicion", "Case 0. onSuccess");
+                        // Log.i("posicion", "Case 0. onSuccess");
                         if (location != null && !printed) {
                             // Log.i("posicion", "Case 0. onSuccess. Location true");
-                                home = new LatLng(location.getLatitude(), location.getLongitude());
-                                saveHome(home);
-                                setTrueHomeSaved();
+                            home = new LatLng(location.getLatitude(), location.getLongitude());
+                            saveHome(home);
+                            setTrueHomeSaved();
 
 
                             // Draw circle around home
@@ -464,7 +464,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (lastVersionCode == -1) result = 0; else
             result = (lastVersionCode == currentVersionCode) ? 1 : 2;
         sp.edit().putInt("FIRSTTIMERUN", currentVersionCode).apply();
-
    */
         return result;
 

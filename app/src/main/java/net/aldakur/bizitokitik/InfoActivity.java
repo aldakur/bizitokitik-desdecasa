@@ -1,8 +1,8 @@
-package net.aldakur.desdecasacovid19;
-
-import androidx.appcompat.app.AppCompatActivity;
+package net.aldakur.bizitokitik;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InfoActivity extends AppCompatActivity {
 

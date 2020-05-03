@@ -26,9 +26,9 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="https://github.com/aldakur/desdecasacovid19"
+        android:text="https://github.com/aldakur/bizitokitik-desdecasa"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:textSize="14dp"
         android:padding="8dp"
         android:autoLink="web"
         tools:context=".InfoActivity" />
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="https://www.egoitzgonzalez.com"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:textSize="14dp"
         android:padding="8dp"
         android:autoLink="web"
         tools:context=".InfoActivity" />
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:text="https://www.aldakur.net"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:textSize="14dp"
         android:padding="8dp"
         android:autoLink="web"
         tools:context=".InfoActivity" />
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:text="https://www.twitter.com/aldakur"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:textSize="14dp"
         android:padding="8dp"
         android:autoLink="web"
         tools:context=".InfoActivity" />

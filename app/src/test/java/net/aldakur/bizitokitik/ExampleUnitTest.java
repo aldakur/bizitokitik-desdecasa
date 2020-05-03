@@ -1,4 +1,4 @@
-package net.aldakur.desdecasacovid19;
+package net.aldakur.bizitokitik;
 
 import org.junit.Test;
 
