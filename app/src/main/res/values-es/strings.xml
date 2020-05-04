@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Desde Casa</string>
-    <string name="app_version">Versión 1.2.1</string>
+    <string name="app_version">Versión gp1.2</string>
     <string name="title_activity_maps">Bizitokitik - Desde Casa</string>
     <string name="maps_activity_home_alert_title">¿Estás en casa?</string>
     <string name="maps_activity_home_alert_text">La primera vez que inicias debes de estar en casa. De este modo la aplicación guardará tu ubicación actual en tu dispositivo y te mostrara la zona para caminar. La aplicación no guardará tu ubicación en la nube. Respetamos tu privacidad. Si no estas en casa, pulsa salir e inicia la aplicación al llegar a casa. Gracias.</string>
