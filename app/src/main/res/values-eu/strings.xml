@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Bizitokitik</string>
-    <string name="app_version">gp1.2 Bertsioa</string>
+    <string name="app_version">gp1.2.2 Bertsioa</string>
     <string name="title_activity_maps">Bizitokitik</string>
     <string name="maps_activity_home_alert_title">Etxean zaude?</string>
     <string name="maps_activity_home_alert_text">
@@ -22,7 +22,4 @@
     <string name="maps_activity_home_snackbar_text">Zirkulua gaizki dago?</string>
     <string name="maps_activity_home_snackbar_button">Birkokatu</string>
     <string name="maps_activity_home_is_good_title">Zirkulua</string>
-    <string name="maps_activity_home_is_good_text">Zirkulua ongi marraztu nuen aurreko bertsioan?</string>
-    <string name="maps_activity_home_is_good_button_accept">Bai</string>
-    <string name="maps_activity_home_is_good_button_cancel">Ez</string>
 </resources>

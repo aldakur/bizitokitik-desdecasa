@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Bizitokitik - Des De Casa</string>
+    <string name="app_version">Versió gp1.2.2</string>
+    <string name="title_activity_maps">Bizitokitik - Des De Casa</string>
+    <string name="maps_activity_home_alert_title">Estàs a casa?</string>
+    <string name="maps_activity_home_alert_text">La primera vegada que comencis has d\'estar a casa.
+        Així l\'aplicació guardarà la teua ubicació actual en el teu dispositiu i et mostrarà la zona per a caminar.
+        L\'aplicació no guardarà la teua ubicació en el núvol.
+        Respectem la teua privacitat. Si no estàs a casa, polsa sortir i inicia l\'aplicació quan arribis a casa.
+        Gràcies.</string>
+    <string name="maps_activity_home_alert_button_cancel">Sortir</string>
+    <string name="maps_activity_home_alert_button_accept">Acceptar</string>
+    <string name="maps_activity_home_alert_button_no">No</string>
+    <string name="maps_activity_settings_gps_alert">Has de tenir la ubicació de GPS activada en els ajustaments de seguretat i ubicació.</string>
+    <string name="maps_activity_toast_alert_no_location">No puc localitzar la teua ubicació actual. Si tens habilitats els ajustaments i permisos, espera una mica.</string>
+    <string name="maps_activity_toast_app_need_permissions">Sense permisos l\'aplicació no pot localitzar-te.</string>
+    <string name="info">Info</string>
+    <string name="title_activity_info">Informació</string>
+    <string name="activity_info_text">Aplicació baix llicència GPLv3. Codi disponible en Github.</string>
+    <string name="activity_info_developed_by">Desenvolupada per: Egoitz González (@aldakur)</string>
+    <string name="maps_activity_home_snackbar_text">He calculat correctament el cercle?</string>
+    <string name="maps_activity_home_snackbar_button">Tornar a calcular</string>
+    <string name="maps_activity_home_is_good_title">Cercle</string>
+</resources>

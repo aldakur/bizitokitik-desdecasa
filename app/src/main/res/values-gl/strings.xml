@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Bizitokitik - Dende casa</string>
+    <string name="app_version">Versión gp1.2.2</string>
+    <string name="title_activity_maps">Bizitokitik - Dende casa</string>
+    <string name="maps_activity_home_alert_title">Estás na casa?</string>
+    <string name="maps_activity_home_alert_text">A primeira vez que inicias debes estar na casa.
+Deste xeito a aplicación gardará a túa ubicación actual no teu dispositivo e amosarache a zona para camiñar.
+        A aplicación non gardará a túa ubicación na nube.
+        Se non estás na casa , pulsa saír e inicia a aplicación ó chegar a casa. Grazas.</string>
+    <string name="maps_activity_home_alert_button_cancel">Saír</string>
+    <string name="maps_activity_home_alert_button_accept">Aceptar</string>
+    <string name="maps_activity_home_alert_button_no">Non</string>
+    <string name="maps_activity_settings_gps_alert">Debes ter a ubicación do GPS activada nos axustes de seguridade e ubicación.</string>
+    <string name="maps_activity_toast_alert_no_location">Non consigo localizar a túa ubicación actual. Se tes habilitados os axustes e permisos agarda un pouco.</string>
+    <string name="maps_activity_toast_app_need_permissions">Sen permisos a aplicación non pode localizarte.</string>
+    <string name="info">Info</string>
+    <string name="title_activity_info">Información</string>
+    <string name="activity_info_text">Aplicación baixo licencia GPlu3. Código dispoñíbel en GitHub.</string>
+    <string name="activity_info_developed_by">Desenvolvida por : Egoitz González (@aldakur)</string>
+    <string name="maps_activity_home_snackbar_text">Calculei Ben o círculo?</string>
+    <string name="maps_activity_home_snackbar_button">Recalcular</string>
+    <string name="maps_activity_home_is_good_title">Círculo.</string>
+</resources>
